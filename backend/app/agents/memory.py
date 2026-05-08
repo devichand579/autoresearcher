@@ -1,5 +1,7 @@
 """ChromaDB-based semantic memory for long-horizon research understanding."""
+from __future__ import annotations
 import chromadb
+from chromadb.config import Settings as ChromaSettings
 from chromadb.utils import embedding_functions
 from ..config import get_settings
 
@@ -12,7 +14,10 @@ _collection = None
 def _get_client():
     global _client
     if _client is None:
-        _client = chromadb.PersistentClient(path=settings.chroma_persist_directory)
+        _client = chromadb.PersistentClient(
+            path=settings.chroma_persist_directory,
+            settings=ChromaSettings(anonymized_telemetry=False),
+        )
     return _client
 
 

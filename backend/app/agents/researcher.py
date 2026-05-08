@@ -98,7 +98,7 @@ async def run_research_for_topic(
         db.commit()
 
         # Refresh articles for synthesis (if we got new ones)
-        if saved_articles and settings.anthropic_api_key:
+        if saved_articles and (settings.anthropic_api_key or settings.openai_api_key):
             await _generate_synthesis(db, topic, saved_articles)
 
         # Update topic last-fetched time

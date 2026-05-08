@@ -9,7 +9,7 @@ from ..agents.researcher import generate_synthesis_on_demand
 router = APIRouter(prefix="/synthesis", tags=["synthesis"])
 
 
-@router.get("/", response_model=list[SynthesisOut])
+@router.get("", response_model=list[SynthesisOut])
 def list_syntheses(
     topic_id: Optional[int] = None,
     limit: int = 20,

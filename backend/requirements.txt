@@ -6,10 +6,13 @@ pydantic==2.10.3
 pydantic-settings==2.6.1
 python-dotenv==1.0.1
 anthropic==0.40.0
+openai>=1.30.0
 firecrawl-py==1.5.0
 arxiv==2.1.3
 httpx==0.28.0
 chromadb==0.5.23
+# Chroma telemetry uses PostHog; posthog>=6 breaks capture() (see chroma-core/chroma#4966).
+posthog>=2.4.0,<6
 apscheduler==3.10.4
 python-multipart==0.0.18
 aiosqlite==0.20.0

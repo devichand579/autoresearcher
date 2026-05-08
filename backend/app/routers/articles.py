@@ -10,7 +10,7 @@ from ..agents import memory
 router = APIRouter(prefix="/articles", tags=["articles"])
 
 
-@router.get("/", response_model=list[ArticleOut])
+@router.get("", response_model=list[ArticleOut])
 def list_articles(
     topic_id: Optional[int] = None,
     source: Optional[str] = None,

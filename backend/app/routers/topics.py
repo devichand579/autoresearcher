@@ -15,13 +15,13 @@ def _enrich(topic: Topic, db: Session) -> TopicOut:
     return out
 
 
-@router.get("/", response_model=list[TopicOut])
+@router.get("", response_model=list[TopicOut])
 def list_topics(db: Session = Depends(get_db)):
     topics = db.query(Topic).order_by(Topic.created_at.desc()).all()
     return [_enrich(t, db) for t in topics]
 
 
-@router.post("/", response_model=TopicOut, status_code=201)
+@router.post("", response_model=TopicOut, status_code=201)
 def create_topic(payload: TopicCreate, db: Session = Depends(get_db)):
     if db.query(Topic).filter(Topic.name == payload.name).first():
         raise HTTPException(400, "Topic with this name already exists")

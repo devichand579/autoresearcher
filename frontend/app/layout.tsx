@@ -14,20 +14,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark h-full">
       <head>
         <title>AutoResearcher</title>
         <meta name="description" content="AI-powered research agent that synthesizes the latest developments" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className="min-h-screen bg-background flex overflow-hidden">
+      <body className="h-full min-h-0 bg-background flex overflow-hidden">
         <QueryClientProvider client={queryClient}>
           <Sidebar open={sidebarOpen} onToggle={() => setSidebarOpen((p) => !p)} />
           <main
-            className="flex-1 overflow-auto transition-all duration-300"
+            className="flex-1 min-h-0 overflow-y-auto transition-all duration-300"
             style={{ marginLeft: sidebarOpen ? "240px" : "64px" }}
           >
-            <div className="min-h-screen p-6 max-w-7xl mx-auto">
+            <div className="min-h-full p-6 max-w-7xl mx-auto">
               {children}
             </div>
           </main>

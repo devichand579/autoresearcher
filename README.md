@@ -1,8 +1,8 @@
-# AutoResearcher
+# Keepmeposted
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**AutoResearcher** is a full-stack assistant for staying on top of a research area. You define topics; it pulls papers and web results from several sources, stores them with embeddings for context, summarizes each item with an LLM, and generates higher-level syntheses across what you have collected. A dark-mode dashboard lets you browse, search, and trigger runs on demand.
+**keepmeposted** is a full-stack assistant for staying on top of a research area. You define topics; it pulls papers and web results from several sources, stores them with embeddings for context, summarizes each item with an LLM, and generates higher-level syntheses across what you have collected. A dark-mode dashboard lets you browse, search, and trigger runs on demand.
 
 ---
 
